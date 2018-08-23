@@ -1,0 +1,14 @@
+sudo yum install -y git
+sudo useradd jenkins
+sudo git clone https://github.com/bob-crutchley/python-systemd-http-server.git
+cd python-systemd-http-server
+sudo make install
+sudo systemctl start python-systemd-http-server.service
+sudo yum -y install wget
+
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+sudo yum -y install java
+sudo yum -y install jenkins
+sudo systemctl start jenkins
+

@@ -19,4 +19,29 @@ variable "zone" {
         default = "europe-west2-c"
 }
 
+variable "scripts" {
+	 
+	default = []
+	
+}
+
+variable "network" {
+
+	type = "string"
+	default = "default"
+}
+
+variable "allowed_ports" {
+
+	default = ["22", "9000", "8080", "8000"]
+
+
+
+}
+ 
+variable "tags" {
+    default = [
+	"defaulttag"
+    ]
+}
 
