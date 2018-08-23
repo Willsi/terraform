@@ -1,7 +1,7 @@
 resource "google_compute_instance" "default" {
-	name = "test"
-	machine_type = "n1-standard-1"
-	zone = "europe-west2-c"
+	name = "${var.name}"
+	machine_type = "${var.machine_type}"
+	zone = "${var.zone}"
 	boot_disk {
 		initialize_params {
 			image = "centos-7"
@@ -10,7 +10,7 @@ resource "google_compute_instance" "default" {
 	network_interface {
 		network = "default"
 		access_config {
-			// Ephemeral0
+			// Ephemeral
 			}
 		}
 
